@@ -7,6 +7,12 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thirdwatch/thirdwatch-nodejs"
+  },
+  "author": "Thirdwatch",
+  "homepage": "https://www.thirdwatch.ai",
   "dependencies": {
     "superagent": "3.5.2"
   },
