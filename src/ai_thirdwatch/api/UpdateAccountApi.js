@@ -33,7 +33,7 @@
   /**
    * UpdateAccount service.
    * @module ai_thirdwatch/api/UpdateAccountApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

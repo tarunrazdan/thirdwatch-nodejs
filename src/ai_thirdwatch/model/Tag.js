@@ -36,7 +36,7 @@
   /**
    * The Tag model module.
    * @module ai_thirdwatch/model/Tag
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

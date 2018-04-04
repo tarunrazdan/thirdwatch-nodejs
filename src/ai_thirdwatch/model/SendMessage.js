@@ -36,7 +36,7 @@
   /**
    * The SendMessage model module.
    * @module ai_thirdwatch/model/SendMessage
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

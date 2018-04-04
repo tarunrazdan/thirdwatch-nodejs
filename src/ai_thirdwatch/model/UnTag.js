@@ -36,7 +36,7 @@
   /**
    * The UnTag model module.
    * @module ai_thirdwatch/model/UnTag
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

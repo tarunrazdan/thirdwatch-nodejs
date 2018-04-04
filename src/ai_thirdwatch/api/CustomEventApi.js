@@ -33,7 +33,7 @@
   /**
    * CustomEvent service.
    * @module ai_thirdwatch/api/CustomEventApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

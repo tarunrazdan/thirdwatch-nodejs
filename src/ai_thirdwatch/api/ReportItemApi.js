@@ -33,7 +33,7 @@
   /**
    * ReportItem service.
    * @module ai_thirdwatch/api/ReportItemApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

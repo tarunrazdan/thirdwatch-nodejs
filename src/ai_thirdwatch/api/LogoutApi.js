@@ -33,7 +33,7 @@
   /**
    * Logout service.
    * @module ai_thirdwatch/api/LogoutApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

@@ -33,7 +33,7 @@
   /**
    * Login service.
    * @module ai_thirdwatch/api/LoginApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

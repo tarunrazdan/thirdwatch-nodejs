@@ -36,7 +36,7 @@
   /**
    * The ShippingAddress model module.
    * @module ai_thirdwatch/model/ShippingAddress
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

@@ -36,7 +36,7 @@
   /**
    * The AddToCart model module.
    * @module ai_thirdwatch/model/AddToCart
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

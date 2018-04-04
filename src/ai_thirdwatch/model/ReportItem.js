@@ -36,7 +36,7 @@
   /**
    * The ReportItem model module.
    * @module ai_thirdwatch/model/ReportItem
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

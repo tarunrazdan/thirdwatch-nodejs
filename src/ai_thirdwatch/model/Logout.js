@@ -36,7 +36,7 @@
   /**
    * The Logout model module.
    * @module ai_thirdwatch/model/Logout
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

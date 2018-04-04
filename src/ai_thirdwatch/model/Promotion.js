@@ -36,7 +36,7 @@
   /**
    * The Promotion model module.
    * @module ai_thirdwatch/model/Promotion
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

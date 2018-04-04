@@ -33,7 +33,7 @@
   /**
    * SubmitReview service.
    * @module ai_thirdwatch/api/SubmitReviewApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

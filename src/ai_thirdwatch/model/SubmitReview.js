@@ -36,7 +36,7 @@
   /**
    * The SubmitReview model module.
    * @module ai_thirdwatch/model/SubmitReview
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

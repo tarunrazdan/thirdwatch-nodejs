@@ -36,7 +36,7 @@
   /**
    * The BillingAddress model module.
    * @module ai_thirdwatch/model/BillingAddress
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

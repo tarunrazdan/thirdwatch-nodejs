@@ -33,7 +33,7 @@
   /**
    * ItemStatus service.
    * @module ai_thirdwatch/api/ItemStatusApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

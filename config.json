@@ -5,6 +5,6 @@
   "projectName" : "thirdwatch-nodejs",
   "moduleName": "thirdwatch_api",
   "projectDescription": "",
-  "projectVersion": "0.0.1",
+  "projectVersion": "0.0.2",
   "projectLicenseName": "https://thirdwatch.ai/termsOfService.html"
 }

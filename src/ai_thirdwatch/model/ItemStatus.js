@@ -36,7 +36,7 @@
   /**
    * The ItemStatus model module.
    * @module ai_thirdwatch/model/ItemStatus
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

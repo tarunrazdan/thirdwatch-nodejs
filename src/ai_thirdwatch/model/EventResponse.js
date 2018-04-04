@@ -36,7 +36,7 @@
   /**
    * The EventResponse model module.
    * @module ai_thirdwatch/model/EventResponse
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

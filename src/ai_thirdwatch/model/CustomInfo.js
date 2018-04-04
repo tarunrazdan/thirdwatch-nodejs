@@ -36,7 +36,7 @@
   /**
    * The CustomInfo model module.
    * @module ai_thirdwatch/model/CustomInfo
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

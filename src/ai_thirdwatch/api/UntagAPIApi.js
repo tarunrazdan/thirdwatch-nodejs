@@ -33,7 +33,7 @@
   /**
    * UntagAPI service.
    * @module ai_thirdwatch/api/UntagAPIApi
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

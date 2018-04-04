@@ -36,7 +36,7 @@
   /**
    * The Item model module.
    * @module ai_thirdwatch/model/Item
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

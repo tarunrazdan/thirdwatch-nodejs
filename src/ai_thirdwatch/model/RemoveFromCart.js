@@ -36,7 +36,7 @@
   /**
    * The RemoveFromCart model module.
    * @module ai_thirdwatch/model/RemoveFromCart
-   * @version 0.0.1
+   * @version 0.0.2
    */
 
   /**

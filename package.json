@@ -1,6 +1,6 @@
 {
   "name": "thirdwatch-nodejs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "license": "Unlicense",
   "main": "src/ai_thirdwatch/index.js",
