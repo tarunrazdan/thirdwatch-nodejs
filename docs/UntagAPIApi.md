@@ -1,6 +1,6 @@
-# ThirdwatchApi.UntagAPIApi
+# thirdwatch_api.UntagAPIApi
 
-All URIs are relative to *https://api.thirdwatch.ai/event*
+All URIs are relative to *https://localhost/event*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,8 +17,8 @@ To untag a user for a particular abuse type, send the abuse_type key in json dat
 
 ### Example
 ```javascript
-var ThirdwatchApi = require('thirdwatch_api');
-var defaultClient = ThirdwatchApi.ApiClient.default;
+var thirdwatch_api = require('thirdwatch-nodejs');
+var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
@@ -26,16 +26,19 @@ api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new ThirdwatchApi.UntagAPIApi();
+var apiInstance = new thirdwatch_api.UntagAPIApi();
 
-var JSON = new ThirdwatchApi.UnTag(); // UnTag | Pass user and it's info to thirdwatch. Only `_userID` is required field. But this should contain untag info.
+var JSON = new thirdwatch_api.UnTag(); // UnTag | Pass user and it's info to thirdwatch. Only `_userID` is required field. But this should contain untag info.
 
-apiInstance.unTagUser(JSON).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.unTagUser(JSON, callback);
 ```
 
 ### Parameters

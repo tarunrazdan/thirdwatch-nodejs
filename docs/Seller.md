@@ -1,4 +1,4 @@
-# ThirdwatchApi.Seller
+# thirdwatch_api.Seller
 
 ## Properties
 Name | Type | Description | Notes

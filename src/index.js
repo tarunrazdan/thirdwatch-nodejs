@@ -1,12 +1,14 @@
 /**
  * Thirdwatch API
- * The first version of the Thirdwatch API is an exciting step forward towards making it easier for developers to pass data to Thirdwatch.   # Introduction Once you've [registered your website/app](https://thirdwatch.ai) it's easy to start sending data to Thirdwatch.  All endpoints are only accessible via https and are located at `api.thirdwatch.ai`. For instance: you can send event at the moment by ```HTTP POST``` Request to the following URL with your API key in ```Header``` and ```JSON``` data in request body. ```   https://api.thirdwatch.ai/event/v1 ``` Every API request must contain ```API Key``` in header value ```X-THIRDWATCH-API-KEY```  Every event must contain your ```_userId``` (if this is not available, you can alternatively provide a ```_sessionId``` value also in ```_userId```).  # Score API The Score API is use to get an up to date cutomer trust score after you have sent transaction event and order successful. This API will provide the riskiness score of the order with reasons. Some examples of when you may want to check the score are before:    - Before Shippement of a package   - Finalizing a money transfer   - Giving access to a prearranged vacation rental   - Sending voucher on mail    ```   https://api.thirdwatch.ai/v1/get/score?api_key=<your api key>&order_id=<Order id> ```  According to Score you can decide to take action Approve or Reject. Orders with score more than 70 will consider as Riskey orders. We'll provide some reasons also in rules section.  ## Response score API  ``` {   \"order_id\": \"OCT45671\",   \"user_id\": \"ajay_245\",   \"score\": 82,   \"flag\": \"red\",     -\"reasons\": [     {         \"name\": \"_numOfFailedTransactions\",         \"display_name\": \"Number of failed transactions\",         \"flag\": \"green\",         \"value\": \"0\",         \"is_display\": true       },       {         \"name\": \"_accountAge\",         \"display_name\": \"Account age\",         \"flag\": \"red\",         \"value\": \"0\",         \"is_display\": true       },        {         \"name\": \"_numOfOrderSameIp\",         \"display_name\": \"Number of orders from same IP\",         \"flag\": \"red\",         \"value\": \"11\",         \"is_display\": true       }     ] } ```       
+ * The first version of the Thirdwatch API is an exciting step forward towards making it easier for developers to pass data to Thirdwatch.  Once you've [registered your website/app](https://thirdwatch.ai) it's easy to start sending data to Thirdwatch.  All endpoints are only accessible via https and are located at `api.thirdwatch.ai`. For instance: you can send event at the moment by ```HTTP POST``` Request to the following URL with your API key in ```Header``` and ```JSON``` data in request body. ```   https://api.thirdwatch.ai/event/v1 ``` Every API request must contain ```API Key``` in header value ```X-THIRDWATCH-API-KEY```  Every event must contain your ```_userId``` (if this is not available, you can alternatively provide a ```_sessionId``` value also in ```_userId```).  JavaScript Fingerprinting module for capturing unique devices and tracking user interaction.  This script will identify unique devices with respect to the browser. For e.g., if chrome is opened in normal mode a unique device id is generated and this will be same if chrome is opened in incognito mode or reinstalled.  Paste the below script onto your webpage, just after the opening `<body>` tag. This script should be added to the page which is accessed externally by the user of your website. For e.g., If you want to track three different webpages then paste the below script onto each webpage, just after the opening `<body>` tag. This script should not be added onto internal tools or admin panels. ```   &lt;script id=\"thirdwatch\"     data-session-cookie-name=\"&lt;cookie_name&gt;\"     data-session-id-value=\"&lt;session_id&gt;\"     data-user-id=\"&lt;user_id&gt;\"     data-app-secret=\"&lt;app_secret&gt;\"     data-is-track-pageview=\"true\"&gt; (function() {         var loadDeviceJs = function() {         var element = document.createElement(\"script\");         element.async = 1;         element.src = \"https://cdn.thirdwatch.ai/tw.min.js\";         document.body.appendChild(element);         };         if (window.addEventListener) {              window.addEventListener(\"load\", loadDeviceJs, false);         } else if (window.attachEvent) {         window.attachEvent(\"onload\", loadDeviceJs);         }     })();   &lt;/script&gt; ``` * `data-session-cookie-name` -- The cookie name where you are saving the unique session id. We will pick the session id by reading its value from the cookie name. (Optional) * `data-session-id-value` -- In case you are not passing `data-session-cookie-name` than you can put session id directly in this parameter. In absence of both `data-session-cookie-name` and `data-session-id-value`, our system will generate a session Id. (Optional) * `data-user-id` -- Unique user id at your end. This can be email id or primary key in the database. In case of guest user, you can insert session Id here. * `data-app-secret` -- Unique App secret generated for you by Thirdwatch. * `data-is-track-pageview` -- If this is set to true, then the url on which this script is running will be sent to Thirdwatch, else the url will not be captured.   The Score API is use to get an up to date cutomer trust score after you have sent transaction event and order successful. This API will provide the riskiness score of the order with reasons. Some examples of when you may want to check the score are before:    - Before Shippement of a package   - Finalizing a money transfer   - Giving access to a prearranged vacation rental   - Sending voucher on mail  ```   https://api.thirdwatch.ai/neo/v1/score?api_key=<your api key>&order_id=<Order id> ```  According to Score you can decide to take action Approve or Reject. Orders with score more than 70 will consider as Riskey orders. We'll provide some reasons also in rules section.   ``` {   \"order_id\": \"OCT45671\",   \"user_id\": \"ajay_245\",   \"order_timestamp\": \"2017-05-09T09:40:45.717Z\",   \"score\": 82,   \"flag\": \"red\",     -\"reasons\": [     {         \"name\": \"_numOfFailedTransactions\",         \"display_name\": \"Number of failed transactions\",         \"flag\": \"green\",         \"value\": \"0\",         \"is_display\": true       },       {         \"name\": \"_accountAge\",         \"display_name\": \"Account age\",         \"flag\": \"red\",         \"value\": \"0\",         \"is_display\": true       },       {         \"name\": \"_numOfOrderSameIp\",         \"display_name\": \"Number of orders from same IP\",         \"flag\": \"red\",         \"value\": \"11\",         \"is_display\": true       }     ] } ``` 
  *
  * OpenAPI spec version: 0.0.1
- * 
  *
  * NOTE: This class is auto generated by the swagger code generator program.
  * https://github.com/swagger-api/swagger-codegen.git
+ *
+ * Swagger Codegen version: 2.2.3
+ *
  * Do not edit the class manually.
  *
  */
@@ -14,284 +16,294 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/AddPromotion', 'model/AddToCart', 'model/BillingAddress', 'model/Chargeback', 'model/CreateAccount', 'model/CreateOrder', 'model/Custom', 'model/CustomInfo', 'model/ErrorResponse', 'model/EventResponse', 'model/Item', 'model/LinkSessionToUser', 'model/Login', 'model/Logout', 'model/OrderStatus', 'model/PaymentMethod', 'model/Promotion', 'model/RemoveFromCart', 'model/ReportItem', 'model/Seller', 'model/SendMessage', 'model/ShippingAddress', 'model/SubmitReview', 'model/Tag', 'model/Transaction', 'model/UnTag', 'model/UpdateAccount', 'model/UpdateOrder', 'api/AddPromotionApi', 'api/AddToCartApi', 'api/ChargebackApi', 'api/CreateAccountApi', 'api/CreateOrderApi', 'api/CustomEventApi', 'api/LinkSessionToUserApi', 'api/LoginApi', 'api/LogoutApi', 'api/OrderStatusApi', 'api/RemoveFromCartApi', 'api/ReportItemApi', 'api/SendMessageApi', 'api/SubmitReviewApi', 'api/TagAPIApi', 'api/TransactionApi', 'api/UntagAPIApi', 'api/UpdateAccountApi', 'api/UpdateOrderApi'], factory);
+    define(['ai_thirdwatch/ApiClient', 'ai_thirdwatch/model/AddPromotion', 'ai_thirdwatch/model/AddToCart', 'ai_thirdwatch/model/BillingAddress', 'ai_thirdwatch/model/Chargeback', 'ai_thirdwatch/model/CreateAccount', 'ai_thirdwatch/model/CreateOrder', 'ai_thirdwatch/model/Custom', 'ai_thirdwatch/model/CustomInfo', 'ai_thirdwatch/model/ErrorResponse', 'ai_thirdwatch/model/EventResponse', 'ai_thirdwatch/model/Item', 'ai_thirdwatch/model/ItemStatus', 'ai_thirdwatch/model/LinkSessionToUser', 'ai_thirdwatch/model/Login', 'ai_thirdwatch/model/Logout', 'ai_thirdwatch/model/OrderStatus', 'ai_thirdwatch/model/PaymentMethod', 'ai_thirdwatch/model/Promotion', 'ai_thirdwatch/model/RemoveFromCart', 'ai_thirdwatch/model/ReportItem', 'ai_thirdwatch/model/Seller', 'ai_thirdwatch/model/SendMessage', 'ai_thirdwatch/model/ShippingAddress', 'ai_thirdwatch/model/SubmitReview', 'ai_thirdwatch/model/Tag', 'ai_thirdwatch/model/Transaction', 'ai_thirdwatch/model/UnTag', 'ai_thirdwatch/model/UpdateAccount', 'ai_thirdwatch/model/UpdateOrder', 'ai_thirdwatch/api/AddPromotionApi', 'ai_thirdwatch/api/AddToCartApi', 'ai_thirdwatch/api/ChargebackApi', 'ai_thirdwatch/api/CreateAccountApi', 'ai_thirdwatch/api/CreateOrderApi', 'ai_thirdwatch/api/CustomEventApi', 'ai_thirdwatch/api/ItemStatusApi', 'ai_thirdwatch/api/LinkSessionToUserApi', 'ai_thirdwatch/api/LoginApi', 'ai_thirdwatch/api/LogoutApi', 'ai_thirdwatch/api/OrderStatusApi', 'ai_thirdwatch/api/RemoveFromCartApi', 'ai_thirdwatch/api/ReportItemApi', 'ai_thirdwatch/api/SendMessageApi', 'ai_thirdwatch/api/SubmitReviewApi', 'ai_thirdwatch/api/TagAPIApi', 'ai_thirdwatch/api/TransactionApi', 'ai_thirdwatch/api/UntagAPIApi', 'ai_thirdwatch/api/UpdateAccountApi', 'ai_thirdwatch/api/UpdateOrderApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/AddPromotion'), require('./model/AddToCart'), require('./model/BillingAddress'), require('./model/Chargeback'), require('./model/CreateAccount'), require('./model/CreateOrder'), require('./model/Custom'), require('./model/CustomInfo'), require('./model/ErrorResponse'), require('./model/EventResponse'), require('./model/Item'), require('./model/LinkSessionToUser'), require('./model/Login'), require('./model/Logout'), require('./model/OrderStatus'), require('./model/PaymentMethod'), require('./model/Promotion'), require('./model/RemoveFromCart'), require('./model/ReportItem'), require('./model/Seller'), require('./model/SendMessage'), require('./model/ShippingAddress'), require('./model/SubmitReview'), require('./model/Tag'), require('./model/Transaction'), require('./model/UnTag'), require('./model/UpdateAccount'), require('./model/UpdateOrder'), require('./api/AddPromotionApi'), require('./api/AddToCartApi'), require('./api/ChargebackApi'), require('./api/CreateAccountApi'), require('./api/CreateOrderApi'), require('./api/CustomEventApi'), require('./api/LinkSessionToUserApi'), require('./api/LoginApi'), require('./api/LogoutApi'), require('./api/OrderStatusApi'), require('./api/RemoveFromCartApi'), require('./api/ReportItemApi'), require('./api/SendMessageApi'), require('./api/SubmitReviewApi'), require('./api/TagAPIApi'), require('./api/TransactionApi'), require('./api/UntagAPIApi'), require('./api/UpdateAccountApi'), require('./api/UpdateOrderApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AddPromotion'), require('./model/AddToCart'), require('./model/BillingAddress'), require('./model/Chargeback'), require('./model/CreateAccount'), require('./model/CreateOrder'), require('./model/Custom'), require('./model/CustomInfo'), require('./model/ErrorResponse'), require('./model/EventResponse'), require('./model/Item'), require('./model/ItemStatus'), require('./model/LinkSessionToUser'), require('./model/Login'), require('./model/Logout'), require('./model/OrderStatus'), require('./model/PaymentMethod'), require('./model/Promotion'), require('./model/RemoveFromCart'), require('./model/ReportItem'), require('./model/Seller'), require('./model/SendMessage'), require('./model/ShippingAddress'), require('./model/SubmitReview'), require('./model/Tag'), require('./model/Transaction'), require('./model/UnTag'), require('./model/UpdateAccount'), require('./model/UpdateOrder'), require('./api/AddPromotionApi'), require('./api/AddToCartApi'), require('./api/ChargebackApi'), require('./api/CreateAccountApi'), require('./api/CreateOrderApi'), require('./api/CustomEventApi'), require('./api/ItemStatusApi'), require('./api/LinkSessionToUserApi'), require('./api/LoginApi'), require('./api/LogoutApi'), require('./api/OrderStatusApi'), require('./api/RemoveFromCartApi'), require('./api/ReportItemApi'), require('./api/SendMessageApi'), require('./api/SubmitReviewApi'), require('./api/TagAPIApi'), require('./api/TransactionApi'), require('./api/UntagAPIApi'), require('./api/UpdateAccountApi'), require('./api/UpdateOrderApi'));
   }
-}(function(ApiClient, AddPromotion, AddToCart, BillingAddress, Chargeback, CreateAccount, CreateOrder, Custom, CustomInfo, ErrorResponse, EventResponse, Item, LinkSessionToUser, Login, Logout, OrderStatus, PaymentMethod, Promotion, RemoveFromCart, ReportItem, Seller, SendMessage, ShippingAddress, SubmitReview, Tag, Transaction, UnTag, UpdateAccount, UpdateOrder, AddPromotionApi, AddToCartApi, ChargebackApi, CreateAccountApi, CreateOrderApi, CustomEventApi, LinkSessionToUserApi, LoginApi, LogoutApi, OrderStatusApi, RemoveFromCartApi, ReportItemApi, SendMessageApi, SubmitReviewApi, TagAPIApi, TransactionApi, UntagAPIApi, UpdateAccountApi, UpdateOrderApi) {
+}(function(ApiClient, AddPromotion, AddToCart, BillingAddress, Chargeback, CreateAccount, CreateOrder, Custom, CustomInfo, ErrorResponse, EventResponse, Item, ItemStatus, LinkSessionToUser, Login, Logout, OrderStatus, PaymentMethod, Promotion, RemoveFromCart, ReportItem, Seller, SendMessage, ShippingAddress, SubmitReview, Tag, Transaction, UnTag, UpdateAccount, UpdateOrder, AddPromotionApi, AddToCartApi, ChargebackApi, CreateAccountApi, CreateOrderApi, CustomEventApi, ItemStatusApi, LinkSessionToUserApi, LoginApi, LogoutApi, OrderStatusApi, RemoveFromCartApi, ReportItemApi, SendMessageApi, SubmitReviewApi, TagAPIApi, TransactionApi, UntagAPIApi, UpdateAccountApi, UpdateOrderApi) {
   'use strict';
 
   /**
-   * The_first_version_of_the_Thirdwatch_API_is_an_exciting_step_forward_towardsmaking_it_easier_for_developers_to_pass_data_to_Thirdwatch___IntroductionOnce_youve_registered_your_websiteapp_httpsthirdwatch_ai_its_easyto_start_sending_data_to_Thirdwatch_All_endpoints_are_only_accessible_via_https_and_are_located_atapi_thirdwatch_ai__For_instance_you_can_send_event_atthe_moment_by_HTTP_POST_Request_to_the_following_URL_with_your_API_key_in_Header_and_JSON_data_in_request_body___httpsapi_thirdwatch_aieventv1Every_API_request_must_contain_API_Key_in_header_value_X_THIRDWATCH_API_KEYEvery_event_must_contain_your__userId__if_this_is_not_available_you_can_alternatively_provide_a__sessionId_value_also_in__userId__Score_APIThe_Score_API_is_use_to_get_an_up_to_date_cutomer_trust_score_after_you_have_sent_transaction_event_and_order_successful__This_API_will_provide_the_riskiness_score_of_the_order_with_reasons__Some_examples_of_when_you_may_want_to_check_the_score_are_before____Before_Shippement_of_a_package____Finalizing_a_money_transfer____Giving_access_to_a_prearranged_vacation_rental____Sending_voucher_on_mail____httpsapi_thirdwatch_aiv1getscoreapi_keyyour_api_keyorder_idOrder_idAccording_to_Score_you_can_decide_to_take_action_Approve_or_Reject__Orders_with_score_more_than_70_will_consider_as_Riskey_orders__Well_provide_some_reasons_also_in_rules_section__Response_score_API__order_id_OCT45671__user_id_ajay_245__score_82__flag_red_____reasons______________name__numOfFailedTransactions________display_name_Number_of_failed_transactions________flag_green________value_0________is_display_true____________________name__accountAge________display_name_Account_age________flag_red________value_0________is_display_true_____________________name__numOfOrderSameIp________display_name_Number_of_orders_from_same_IP________flag_red________value_11________is_display_true______________.<br>
+   * .<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
    * <pre>
-   * var ThirdwatchApi = require('index'); // See note below*.
-   * var xxxSvc = new ThirdwatchApi.XxxApi(); // Allocate the API class we're going to use.
-   * var yyyModel = new ThirdwatchApi.Yyy(); // Construct a model instance.
+   * var thirdwatch_api = require('ai_thirdwatch/index'); // See note below*.
+   * var xxxSvc = new thirdwatch_api.XxxApi(); // Allocate the API class we're going to use.
+   * var yyyModel = new thirdwatch_api.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
    * ...
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
    * ...
    * </pre>
-   * <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
+   * <em>*NOTE: For a top-level AMD script, use require(['ai_thirdwatch/index'], function(){...})
    * and put the application logic within the callback function.</em>
    * </p>
    * <p>
    * A non-AMD browser application (discouraged) might do something like this:
    * <pre>
-   * var xxxSvc = new ThirdwatchApi.XxxApi(); // Allocate the API class we're going to use.
-   * var yyy = new ThirdwatchApi.Yyy(); // Construct a model instance.
+   * var xxxSvc = new thirdwatch_api.XxxApi(); // Allocate the API class we're going to use.
+   * var yyy = new thirdwatch_api.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
    * ...
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
    * ...
    * </pre>
    * </p>
-   * @module index
+   * @module ai_thirdwatch/index
    * @version 0.0.1
    */
   var exports = {
     /**
      * The ApiClient constructor.
-     * @property {module:ApiClient}
+     * @property {module:ai_thirdwatch/ApiClient}
      */
     ApiClient: ApiClient,
     /**
      * The AddPromotion model constructor.
-     * @property {module:model/AddPromotion}
+     * @property {module:ai_thirdwatch/model/AddPromotion}
      */
     AddPromotion: AddPromotion,
     /**
      * The AddToCart model constructor.
-     * @property {module:model/AddToCart}
+     * @property {module:ai_thirdwatch/model/AddToCart}
      */
     AddToCart: AddToCart,
     /**
      * The BillingAddress model constructor.
-     * @property {module:model/BillingAddress}
+     * @property {module:ai_thirdwatch/model/BillingAddress}
      */
     BillingAddress: BillingAddress,
     /**
      * The Chargeback model constructor.
-     * @property {module:model/Chargeback}
+     * @property {module:ai_thirdwatch/model/Chargeback}
      */
     Chargeback: Chargeback,
     /**
      * The CreateAccount model constructor.
-     * @property {module:model/CreateAccount}
+     * @property {module:ai_thirdwatch/model/CreateAccount}
      */
     CreateAccount: CreateAccount,
     /**
      * The CreateOrder model constructor.
-     * @property {module:model/CreateOrder}
+     * @property {module:ai_thirdwatch/model/CreateOrder}
      */
     CreateOrder: CreateOrder,
     /**
      * The Custom model constructor.
-     * @property {module:model/Custom}
+     * @property {module:ai_thirdwatch/model/Custom}
      */
     Custom: Custom,
     /**
      * The CustomInfo model constructor.
-     * @property {module:model/CustomInfo}
+     * @property {module:ai_thirdwatch/model/CustomInfo}
      */
     CustomInfo: CustomInfo,
     /**
      * The ErrorResponse model constructor.
-     * @property {module:model/ErrorResponse}
+     * @property {module:ai_thirdwatch/model/ErrorResponse}
      */
     ErrorResponse: ErrorResponse,
     /**
      * The EventResponse model constructor.
-     * @property {module:model/EventResponse}
+     * @property {module:ai_thirdwatch/model/EventResponse}
      */
     EventResponse: EventResponse,
     /**
      * The Item model constructor.
-     * @property {module:model/Item}
+     * @property {module:ai_thirdwatch/model/Item}
      */
     Item: Item,
     /**
+     * The ItemStatus model constructor.
+     * @property {module:ai_thirdwatch/model/ItemStatus}
+     */
+    ItemStatus: ItemStatus,
+    /**
      * The LinkSessionToUser model constructor.
-     * @property {module:model/LinkSessionToUser}
+     * @property {module:ai_thirdwatch/model/LinkSessionToUser}
      */
     LinkSessionToUser: LinkSessionToUser,
     /**
      * The Login model constructor.
-     * @property {module:model/Login}
+     * @property {module:ai_thirdwatch/model/Login}
      */
     Login: Login,
     /**
      * The Logout model constructor.
-     * @property {module:model/Logout}
+     * @property {module:ai_thirdwatch/model/Logout}
      */
     Logout: Logout,
     /**
      * The OrderStatus model constructor.
-     * @property {module:model/OrderStatus}
+     * @property {module:ai_thirdwatch/model/OrderStatus}
      */
     OrderStatus: OrderStatus,
     /**
      * The PaymentMethod model constructor.
-     * @property {module:model/PaymentMethod}
+     * @property {module:ai_thirdwatch/model/PaymentMethod}
      */
     PaymentMethod: PaymentMethod,
     /**
      * The Promotion model constructor.
-     * @property {module:model/Promotion}
+     * @property {module:ai_thirdwatch/model/Promotion}
      */
     Promotion: Promotion,
     /**
      * The RemoveFromCart model constructor.
-     * @property {module:model/RemoveFromCart}
+     * @property {module:ai_thirdwatch/model/RemoveFromCart}
      */
     RemoveFromCart: RemoveFromCart,
     /**
      * The ReportItem model constructor.
-     * @property {module:model/ReportItem}
+     * @property {module:ai_thirdwatch/model/ReportItem}
      */
     ReportItem: ReportItem,
     /**
      * The Seller model constructor.
-     * @property {module:model/Seller}
+     * @property {module:ai_thirdwatch/model/Seller}
      */
     Seller: Seller,
     /**
      * The SendMessage model constructor.
-     * @property {module:model/SendMessage}
+     * @property {module:ai_thirdwatch/model/SendMessage}
      */
     SendMessage: SendMessage,
     /**
      * The ShippingAddress model constructor.
-     * @property {module:model/ShippingAddress}
+     * @property {module:ai_thirdwatch/model/ShippingAddress}
      */
     ShippingAddress: ShippingAddress,
     /**
      * The SubmitReview model constructor.
-     * @property {module:model/SubmitReview}
+     * @property {module:ai_thirdwatch/model/SubmitReview}
      */
     SubmitReview: SubmitReview,
     /**
      * The Tag model constructor.
-     * @property {module:model/Tag}
+     * @property {module:ai_thirdwatch/model/Tag}
      */
     Tag: Tag,
     /**
      * The Transaction model constructor.
-     * @property {module:model/Transaction}
+     * @property {module:ai_thirdwatch/model/Transaction}
      */
     Transaction: Transaction,
     /**
      * The UnTag model constructor.
-     * @property {module:model/UnTag}
+     * @property {module:ai_thirdwatch/model/UnTag}
      */
     UnTag: UnTag,
     /**
      * The UpdateAccount model constructor.
-     * @property {module:model/UpdateAccount}
+     * @property {module:ai_thirdwatch/model/UpdateAccount}
      */
     UpdateAccount: UpdateAccount,
     /**
      * The UpdateOrder model constructor.
-     * @property {module:model/UpdateOrder}
+     * @property {module:ai_thirdwatch/model/UpdateOrder}
      */
     UpdateOrder: UpdateOrder,
     /**
      * The AddPromotionApi service constructor.
-     * @property {module:api/AddPromotionApi}
+     * @property {module:ai_thirdwatch/api/AddPromotionApi}
      */
     AddPromotionApi: AddPromotionApi,
     /**
      * The AddToCartApi service constructor.
-     * @property {module:api/AddToCartApi}
+     * @property {module:ai_thirdwatch/api/AddToCartApi}
      */
     AddToCartApi: AddToCartApi,
     /**
      * The ChargebackApi service constructor.
-     * @property {module:api/ChargebackApi}
+     * @property {module:ai_thirdwatch/api/ChargebackApi}
      */
     ChargebackApi: ChargebackApi,
     /**
      * The CreateAccountApi service constructor.
-     * @property {module:api/CreateAccountApi}
+     * @property {module:ai_thirdwatch/api/CreateAccountApi}
      */
     CreateAccountApi: CreateAccountApi,
     /**
      * The CreateOrderApi service constructor.
-     * @property {module:api/CreateOrderApi}
+     * @property {module:ai_thirdwatch/api/CreateOrderApi}
      */
     CreateOrderApi: CreateOrderApi,
     /**
      * The CustomEventApi service constructor.
-     * @property {module:api/CustomEventApi}
+     * @property {module:ai_thirdwatch/api/CustomEventApi}
      */
     CustomEventApi: CustomEventApi,
     /**
+     * The ItemStatusApi service constructor.
+     * @property {module:ai_thirdwatch/api/ItemStatusApi}
+     */
+    ItemStatusApi: ItemStatusApi,
+    /**
      * The LinkSessionToUserApi service constructor.
-     * @property {module:api/LinkSessionToUserApi}
+     * @property {module:ai_thirdwatch/api/LinkSessionToUserApi}
      */
     LinkSessionToUserApi: LinkSessionToUserApi,
     /**
      * The LoginApi service constructor.
-     * @property {module:api/LoginApi}
+     * @property {module:ai_thirdwatch/api/LoginApi}
      */
     LoginApi: LoginApi,
     /**
      * The LogoutApi service constructor.
-     * @property {module:api/LogoutApi}
+     * @property {module:ai_thirdwatch/api/LogoutApi}
      */
     LogoutApi: LogoutApi,
     /**
      * The OrderStatusApi service constructor.
-     * @property {module:api/OrderStatusApi}
+     * @property {module:ai_thirdwatch/api/OrderStatusApi}
      */
     OrderStatusApi: OrderStatusApi,
     /**
      * The RemoveFromCartApi service constructor.
-     * @property {module:api/RemoveFromCartApi}
+     * @property {module:ai_thirdwatch/api/RemoveFromCartApi}
      */
     RemoveFromCartApi: RemoveFromCartApi,
     /**
      * The ReportItemApi service constructor.
-     * @property {module:api/ReportItemApi}
+     * @property {module:ai_thirdwatch/api/ReportItemApi}
      */
     ReportItemApi: ReportItemApi,
     /**
      * The SendMessageApi service constructor.
-     * @property {module:api/SendMessageApi}
+     * @property {module:ai_thirdwatch/api/SendMessageApi}
      */
     SendMessageApi: SendMessageApi,
     /**
      * The SubmitReviewApi service constructor.
-     * @property {module:api/SubmitReviewApi}
+     * @property {module:ai_thirdwatch/api/SubmitReviewApi}
      */
     SubmitReviewApi: SubmitReviewApi,
     /**
      * The TagAPIApi service constructor.
-     * @property {module:api/TagAPIApi}
+     * @property {module:ai_thirdwatch/api/TagAPIApi}
      */
     TagAPIApi: TagAPIApi,
     /**
      * The TransactionApi service constructor.
-     * @property {module:api/TransactionApi}
+     * @property {module:ai_thirdwatch/api/TransactionApi}
      */
     TransactionApi: TransactionApi,
     /**
      * The UntagAPIApi service constructor.
-     * @property {module:api/UntagAPIApi}
+     * @property {module:ai_thirdwatch/api/UntagAPIApi}
      */
     UntagAPIApi: UntagAPIApi,
     /**
      * The UpdateAccountApi service constructor.
-     * @property {module:api/UpdateAccountApi}
+     * @property {module:ai_thirdwatch/api/UpdateAccountApi}
      */
     UpdateAccountApi: UpdateAccountApi,
     /**
      * The UpdateOrderApi service constructor.
-     * @property {module:api/UpdateOrderApi}
+     * @property {module:ai_thirdwatch/api/UpdateOrderApi}
      */
     UpdateOrderApi: UpdateOrderApi
   };

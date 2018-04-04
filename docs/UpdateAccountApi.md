@@ -1,6 +1,6 @@
-# ThirdwatchApi.UpdateAccountApi
+# thirdwatch_api.UpdateAccountApi
 
-All URIs are relative to *https://api.thirdwatch.ai/event*
+All URIs are relative to *https://localhost/event*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,8 +17,8 @@ For user accounts created before integration with Thirdwatch, there&#39;s no nee
 
 ### Example
 ```javascript
-var ThirdwatchApi = require('thirdwatch_api');
-var defaultClient = ThirdwatchApi.ApiClient.default;
+var thirdwatch_api = require('thirdwatch-nodejs');
+var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
@@ -26,16 +26,19 @@ api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new ThirdwatchApi.UpdateAccountApi();
+var apiInstance = new thirdwatch_api.UpdateAccountApi();
 
-var JSON = new ThirdwatchApi.UpdateAccount(); // UpdateAccount | Pass user details after update or change in user info. Only `_userID` is required field. But this should contain user info.
+var JSON = new thirdwatch_api.UpdateAccount(); // UpdateAccount | Pass user details after update or change in user info. Only `_userID` is required field. But this should contain user info.
 
-apiInstance.updateAccount(JSON).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateAccount(JSON, callback);
 ```
 
 ### Parameters

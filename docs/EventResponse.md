@@ -1,4 +1,4 @@
-# ThirdwatchApi.EventResponse
+# thirdwatch_api.EventResponse
 
 ## Properties
 Name | Type | Description | Notes

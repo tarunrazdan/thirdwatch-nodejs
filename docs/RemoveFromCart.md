@@ -1,4 +1,4 @@
-# ThirdwatchApi.RemoveFromCart
+# thirdwatch_api.RemoveFromCart
 
 ## Properties
 Name | Type | Description | Notes

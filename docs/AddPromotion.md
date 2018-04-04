@@ -1,4 +1,4 @@
-# ThirdwatchApi.AddPromotion
+# thirdwatch_api.AddPromotion
 
 ## Properties
 Name | Type | Description | Notes

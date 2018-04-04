@@ -1,4 +1,4 @@
-# ThirdwatchApi.Login
+# thirdwatch_api.Login
 
 ## Properties
 Name | Type | Description | Notes

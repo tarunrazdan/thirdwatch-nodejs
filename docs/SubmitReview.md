@@ -1,4 +1,4 @@
-# ThirdwatchApi.SubmitReview
+# thirdwatch_api.SubmitReview
 
 ## Properties
 Name | Type | Description | Notes

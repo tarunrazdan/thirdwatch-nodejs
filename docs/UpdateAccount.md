@@ -1,4 +1,4 @@
-# ThirdwatchApi.UpdateAccount
+# thirdwatch_api.UpdateAccount
 
 ## Properties
 Name | Type | Description | Notes

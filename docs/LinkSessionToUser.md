@@ -1,4 +1,4 @@
-# ThirdwatchApi.LinkSessionToUser
+# thirdwatch_api.LinkSessionToUser
 
 ## Properties
 Name | Type | Description | Notes

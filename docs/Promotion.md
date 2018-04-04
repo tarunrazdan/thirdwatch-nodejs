@@ -1,4 +1,4 @@
-# ThirdwatchApi.Promotion
+# thirdwatch_api.Promotion
 
 ## Properties
 Name | Type | Description | Notes

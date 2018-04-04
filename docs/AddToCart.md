@@ -1,4 +1,4 @@
-# ThirdwatchApi.AddToCart
+# thirdwatch_api.AddToCart
 
 ## Properties
 Name | Type | Description | Notes

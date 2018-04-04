@@ -1,4 +1,4 @@
-# ThirdwatchApi.PaymentMethod
+# thirdwatch_api.PaymentMethod
 
 ## Properties
 Name | Type | Description | Notes

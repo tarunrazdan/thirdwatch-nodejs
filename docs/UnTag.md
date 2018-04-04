@@ -1,4 +1,4 @@
-# ThirdwatchApi.UnTag
+# thirdwatch_api.UnTag
 
 ## Properties
 Name | Type | Description | Notes

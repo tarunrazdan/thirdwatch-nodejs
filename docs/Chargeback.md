@@ -1,4 +1,4 @@
-# ThirdwatchApi.Chargeback
+# thirdwatch_api.Chargeback
 
 ## Properties
 Name | Type | Description | Notes

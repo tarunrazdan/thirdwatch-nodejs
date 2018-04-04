@@ -1,0 +1,10 @@
+{
+  "invokerPackage":"ai_thirdwatch",
+  "apiPackage": "api",
+  "modelPackage": "model",
+  "projectName" : "thirdwatch-nodejs",
+  "moduleName": "thirdwatch_api",
+  "projectDescription": "",
+  "projectVersion": "0.0.1",
+  "projectLicenseName": "https://thirdwatch.ai/termsOfService.html"
+}

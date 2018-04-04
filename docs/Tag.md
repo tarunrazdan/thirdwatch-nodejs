@@ -1,4 +1,4 @@
-# ThirdwatchApi.Tag
+# thirdwatch_api.Tag
 
 ## Properties
 Name | Type | Description | Notes

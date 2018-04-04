@@ -1,4 +1,4 @@
-# ThirdwatchApi.Item
+# thirdwatch_api.Item
 
 ## Properties
 Name | Type | Description | Notes

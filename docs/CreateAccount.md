@@ -1,4 +1,4 @@
-# ThirdwatchApi.CreateAccount
+# thirdwatch_api.CreateAccount
 
 ## Properties
 Name | Type | Description | Notes

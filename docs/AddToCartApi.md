@@ -1,6 +1,6 @@
-# ThirdwatchApi.AddToCartApi
+# thirdwatch_api.AddToCartApi
 
-All URIs are relative to *https://api.thirdwatch.ai/event*
+All URIs are relative to *https://localhost/event*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,8 +15,8 @@ Use add_to_cart when a user adds an item to their shopping cart or list.
 
 ### Example
 ```javascript
-var ThirdwatchApi = require('thirdwatch_api');
-var defaultClient = ThirdwatchApi.ApiClient.default;
+var thirdwatch_api = require('thirdwatch-nodejs');
+var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
@@ -24,16 +24,19 @@ api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new ThirdwatchApi.AddToCartApi();
+var apiInstance = new thirdwatch_api.AddToCartApi();
 
-var JSON = new ThirdwatchApi.AddToCart(); // AddToCart | Pass added item info to thirdwatch. Only `_userID` is required field. But this should contain item info.
+var JSON = new thirdwatch_api.AddToCart(); // AddToCart | Pass added item info to thirdwatch. Only `_userID` is required field. But this should contain item info.
 
-apiInstance.addToCart(JSON).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addToCart(JSON, callback);
 ```
 
 ### Parameters

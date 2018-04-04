@@ -1,4 +1,4 @@
-# ThirdwatchApi.BillingAddress
+# thirdwatch_api.BillingAddress
 
 ## Properties
 Name | Type | Description | Notes

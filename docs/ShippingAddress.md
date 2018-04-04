@@ -1,4 +1,4 @@
-# ThirdwatchApi.ShippingAddress
+# thirdwatch_api.ShippingAddress
 
 ## Properties
 Name | Type | Description | Notes

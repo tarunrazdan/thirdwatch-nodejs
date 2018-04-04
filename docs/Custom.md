@@ -1,4 +1,4 @@
-# ThirdwatchApi.Custom
+# thirdwatch_api.Custom
 
 ## Properties
 Name | Type | Description | Notes

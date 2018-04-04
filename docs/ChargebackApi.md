@@ -1,6 +1,6 @@
-# ThirdwatchApi.ChargebackApi
+# thirdwatch_api.ChargebackApi
 
-All URIs are relative to *https://api.thirdwatch.ai/event*
+All URIs are relative to *https://localhost/event*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,8 +17,8 @@ Note - When you send a chargeback event you also need to send a label event if y
 
 ### Example
 ```javascript
-var ThirdwatchApi = require('thirdwatch_api');
-var defaultClient = ThirdwatchApi.ApiClient.default;
+var thirdwatch_api = require('thirdwatch-nodejs');
+var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
@@ -26,16 +26,19 @@ api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new ThirdwatchApi.ChargebackApi();
+var apiInstance = new thirdwatch_api.ChargebackApi();
 
-var JSON = new ThirdwatchApi.Chargeback(); // Chargeback | Pass chargeback to thirdwatch. Only `_userID` is required field. But this should contain chargeback info.
+var JSON = new thirdwatch_api.Chargeback(); // Chargeback | Pass chargeback to thirdwatch. Only `_userID` is required field. But this should contain chargeback info.
 
-apiInstance.chargeback(JSON).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.chargeback(JSON, callback);
 ```
 
 ### Parameters

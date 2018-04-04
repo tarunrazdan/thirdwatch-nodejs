@@ -1,4 +1,4 @@
-# ThirdwatchApi.SendMessage
+# thirdwatch_api.SendMessage
 
 ## Properties
 Name | Type | Description | Notes

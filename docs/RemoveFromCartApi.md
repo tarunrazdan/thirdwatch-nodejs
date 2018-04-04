@@ -1,6 +1,6 @@
-# ThirdwatchApi.RemoveFromCartApi
+# thirdwatch_api.RemoveFromCartApi
 
-All URIs are relative to *https://api.thirdwatch.ai/event*
+All URIs are relative to *https://localhost/event*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,8 +15,8 @@ Use remove_from_cart when a user removes an item from their shopping cart or lis
 
 ### Example
 ```javascript
-var ThirdwatchApi = require('thirdwatch_api');
-var defaultClient = ThirdwatchApi.ApiClient.default;
+var thirdwatch_api = require('thirdwatch-nodejs');
+var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
@@ -24,16 +24,19 @@ api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-var apiInstance = new ThirdwatchApi.RemoveFromCartApi();
+var apiInstance = new thirdwatch_api.RemoveFromCartApi();
 
-var JSON = new ThirdwatchApi.RemoveFromCart(); // RemoveFromCart | Pass removed item info to thirdwatch. Only `_userID` is required field. But this should contain item info.
+var JSON = new thirdwatch_api.RemoveFromCart(); // RemoveFromCart | Pass removed item info to thirdwatch. Only `_userID` is required field. But this should contain item info.
 
-apiInstance.removeFromCart(JSON).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.removeFromCart(JSON, callback);
 ```
 
 ### Parameters

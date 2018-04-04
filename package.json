@@ -1,18 +1,15 @@
 {
-  "name": "thirdwatch_api",
+  "name": "thirdwatch-nodejs",
   "version": "0.0.1",
-  "description": "The_first_version_of_the_Thirdwatch_API_is_an_exciting_step_forward_towardsmaking_it_easier_for_developers_to_pass_data_to_Thirdwatch___IntroductionOnce_youve_registered_your_websiteapp_httpsthirdwatch_ai_its_easyto_start_sending_data_to_Thirdwatch_All_endpoints_are_only_accessible_via_https_and_are_located_atapi_thirdwatch_ai__For_instance_you_can_send_event_atthe_moment_by_HTTP_POST_Request_to_the_following_URL_with_your_API_key_in_Header_and_JSON_data_in_request_body___httpsapi_thirdwatch_aieventv1Every_API_request_must_contain_API_Key_in_header_value_X_THIRDWATCH_API_KEYEvery_event_must_contain_your__userId__if_this_is_not_available_you_can_alternatively_provide_a__sessionId_value_also_in__userId__Score_APIThe_Score_API_is_use_to_get_an_up_to_date_cutomer_trust_score_after_you_have_sent_transaction_event_and_order_successful__This_API_will_provide_the_riskiness_score_of_the_order_with_reasons__Some_examples_of_when_you_may_want_to_check_the_score_are_before____Before_Shippement_of_a_package____Finalizing_a_money_transfer____Giving_access_to_a_prearranged_vacation_rental____Sending_voucher_on_mail____httpsapi_thirdwatch_aiv1getscoreapi_keyyour_api_keyorder_idOrder_idAccording_to_Score_you_can_decide_to_take_action_Approve_or_Reject__Orders_with_score_more_than_70_will_consider_as_Riskey_orders__Well_provide_some_reasons_also_in_rules_section__Response_score_API__order_id_OCT45671__user_id_ajay_245__score_82__flag_red_____reasons______________name__numOfFailedTransactions________display_name_Number_of_failed_transactions________flag_green________value_0________is_display_true____________________name__accountAge________display_name_Account_age________flag_red________value_0________is_display_true_____________________name__numOfOrderSameIp________display_name_Number_of_orders_from_same_IP________flag_red________value_11________is_display_true______________",
+  "description": "",
   "license": "Unlicense",
-  "main": "src/index.js",
+  "main": "src/ai_thirdwatch/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
   },
-   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thirdwatch/thirdwatch-nodejs"
+  "browser": {
+    "fs": false
   },
-  "author": "Thirdwatch",
-  "homepage": "https://www.thirdwatch.ai",
   "dependencies": {
     "superagent": "3.5.2"
   },
