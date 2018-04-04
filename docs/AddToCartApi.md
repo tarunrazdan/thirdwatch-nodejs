@@ -15,7 +15,7 @@ Use add_to_cart when a user adds an item to their shopping cart or list.
 
 ### Example
 ```javascript
-var thirdwatch_api = require('thirdwatch-nodejs');
+var thirdwatch_api = require('thirdwatch_api');
 var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key

@@ -15,7 +15,7 @@ Use remove_from_cart when a user removes an item from their shopping cart or lis
 
 ### Example
 ```javascript
-var thirdwatch_api = require('thirdwatch-nodejs');
+var thirdwatch_api = require('thirdwatch_api');
 var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key

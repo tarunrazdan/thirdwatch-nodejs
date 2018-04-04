@@ -15,7 +15,7 @@ Use transaction to record attempts results to Pay, Transfer money, Refund or oth
 
 ### Example
 ```javascript
-var thirdwatch_api = require('thirdwatch-nodejs');
+var thirdwatch_api = require('thirdwatch_api');
 var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key

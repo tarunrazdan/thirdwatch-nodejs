@@ -15,7 +15,7 @@ Use submit_review when a user-submitted review of a product or seller.
 
 ### Example
 ```javascript
-var thirdwatch_api = require('thirdwatch-nodejs');
+var thirdwatch_api = require('thirdwatch_api');
 var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key

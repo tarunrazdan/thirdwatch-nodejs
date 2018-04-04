@@ -15,7 +15,7 @@ Use add_promotion to record when a user adds one or more promotions to their acc
 
 ### Example
 ```javascript
-var thirdwatch_api = require('thirdwatch-nodejs');
+var thirdwatch_api = require('thirdwatch_api');
 var defaultClient = thirdwatch_api.ApiClient.instance;
 
 // Configure API key authorization: api_key

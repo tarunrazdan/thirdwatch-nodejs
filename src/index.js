@@ -16,7 +16,7 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ai_thirdwatch/ApiClient', 'ai_thirdwatch/model/AddPromotion', 'ai_thirdwatch/model/AddToCart', 'ai_thirdwatch/model/BillingAddress', 'ai_thirdwatch/model/Chargeback', 'ai_thirdwatch/model/CreateAccount', 'ai_thirdwatch/model/CreateOrder', 'ai_thirdwatch/model/Custom', 'ai_thirdwatch/model/CustomInfo', 'ai_thirdwatch/model/ErrorResponse', 'ai_thirdwatch/model/EventResponse', 'ai_thirdwatch/model/Item', 'ai_thirdwatch/model/ItemStatus', 'ai_thirdwatch/model/LinkSessionToUser', 'ai_thirdwatch/model/Login', 'ai_thirdwatch/model/Logout', 'ai_thirdwatch/model/OrderStatus', 'ai_thirdwatch/model/PaymentMethod', 'ai_thirdwatch/model/Promotion', 'ai_thirdwatch/model/RemoveFromCart', 'ai_thirdwatch/model/ReportItem', 'ai_thirdwatch/model/Seller', 'ai_thirdwatch/model/SendMessage', 'ai_thirdwatch/model/ShippingAddress', 'ai_thirdwatch/model/SubmitReview', 'ai_thirdwatch/model/Tag', 'ai_thirdwatch/model/Transaction', 'ai_thirdwatch/model/UnTag', 'ai_thirdwatch/model/UpdateAccount', 'ai_thirdwatch/model/UpdateOrder', 'ai_thirdwatch/api/AddPromotionApi', 'ai_thirdwatch/api/AddToCartApi', 'ai_thirdwatch/api/ChargebackApi', 'ai_thirdwatch/api/CreateAccountApi', 'ai_thirdwatch/api/CreateOrderApi', 'ai_thirdwatch/api/CustomEventApi', 'ai_thirdwatch/api/ItemStatusApi', 'ai_thirdwatch/api/LinkSessionToUserApi', 'ai_thirdwatch/api/LoginApi', 'ai_thirdwatch/api/LogoutApi', 'ai_thirdwatch/api/OrderStatusApi', 'ai_thirdwatch/api/RemoveFromCartApi', 'ai_thirdwatch/api/ReportItemApi', 'ai_thirdwatch/api/SendMessageApi', 'ai_thirdwatch/api/SubmitReviewApi', 'ai_thirdwatch/api/TagAPIApi', 'ai_thirdwatch/api/TransactionApi', 'ai_thirdwatch/api/UntagAPIApi', 'ai_thirdwatch/api/UpdateAccountApi', 'ai_thirdwatch/api/UpdateOrderApi'], factory);
+    define(['ApiClient', 'model/AddPromotion', 'model/AddToCart', 'model/BillingAddress', 'model/Chargeback', 'model/CreateAccount', 'model/CreateOrder', 'model/Custom', 'model/CustomInfo', 'model/ErrorResponse', 'model/EventResponse', 'model/Item', 'model/ItemStatus', 'model/LinkSessionToUser', 'model/Login', 'model/Logout', 'model/OrderStatus', 'model/PaymentMethod', 'model/Promotion', 'model/RemoveFromCart', 'model/ReportItem', 'model/Seller', 'model/SendMessage', 'model/ShippingAddress', 'model/SubmitReview', 'model/Tag', 'model/Transaction', 'model/UnTag', 'model/UpdateAccount', 'model/UpdateOrder', 'api/AddPromotionApi', 'api/AddToCartApi', 'api/ChargebackApi', 'api/CreateAccountApi', 'api/CreateOrderApi', 'api/CustomEventApi', 'api/ItemStatusApi', 'api/LinkSessionToUserApi', 'api/LoginApi', 'api/LogoutApi', 'api/OrderStatusApi', 'api/RemoveFromCartApi', 'api/ReportItemApi', 'api/SendMessageApi', 'api/SubmitReviewApi', 'api/TagAPIApi', 'api/TransactionApi', 'api/UntagAPIApi', 'api/UpdateAccountApi', 'api/UpdateOrderApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     module.exports = factory(require('./ApiClient'), require('./model/AddPromotion'), require('./model/AddToCart'), require('./model/BillingAddress'), require('./model/Chargeback'), require('./model/CreateAccount'), require('./model/CreateOrder'), require('./model/Custom'), require('./model/CustomInfo'), require('./model/ErrorResponse'), require('./model/EventResponse'), require('./model/Item'), require('./model/ItemStatus'), require('./model/LinkSessionToUser'), require('./model/Login'), require('./model/Logout'), require('./model/OrderStatus'), require('./model/PaymentMethod'), require('./model/Promotion'), require('./model/RemoveFromCart'), require('./model/ReportItem'), require('./model/Seller'), require('./model/SendMessage'), require('./model/ShippingAddress'), require('./model/SubmitReview'), require('./model/Tag'), require('./model/Transaction'), require('./model/UnTag'), require('./model/UpdateAccount'), require('./model/UpdateOrder'), require('./api/AddPromotionApi'), require('./api/AddToCartApi'), require('./api/ChargebackApi'), require('./api/CreateAccountApi'), require('./api/CreateOrderApi'), require('./api/CustomEventApi'), require('./api/ItemStatusApi'), require('./api/LinkSessionToUserApi'), require('./api/LoginApi'), require('./api/LogoutApi'), require('./api/OrderStatusApi'), require('./api/RemoveFromCartApi'), require('./api/ReportItemApi'), require('./api/SendMessageApi'), require('./api/SubmitReviewApi'), require('./api/TagAPIApi'), require('./api/TransactionApi'), require('./api/UntagAPIApi'), require('./api/UpdateAccountApi'), require('./api/UpdateOrderApi'));
@@ -30,7 +30,7 @@
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
    * <pre>
-   * var thirdwatch_api = require('ai_thirdwatch/index'); // See note below*.
+   * var thirdwatch_api = require('index'); // See note below*.
    * var xxxSvc = new thirdwatch_api.XxxApi(); // Allocate the API class we're going to use.
    * var yyyModel = new thirdwatch_api.Yyy(); // Construct a model instance.
    * yyyModel.someProperty = 'someValue';
@@ -38,7 +38,7 @@
    * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
    * ...
    * </pre>
-   * <em>*NOTE: For a top-level AMD script, use require(['ai_thirdwatch/index'], function(){...})
+   * <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
    * and put the application logic within the callback function.</em>
    * </p>
    * <p>
@@ -52,258 +52,258 @@
    * ...
    * </pre>
    * </p>
-   * @module ai_thirdwatch/index
+   * @module index
    * @version 0.0.2
    */
   var exports = {
     /**
      * The ApiClient constructor.
-     * @property {module:ai_thirdwatch/ApiClient}
+     * @property {module:ApiClient}
      */
     ApiClient: ApiClient,
     /**
      * The AddPromotion model constructor.
-     * @property {module:ai_thirdwatch/model/AddPromotion}
+     * @property {module:model/AddPromotion}
      */
     AddPromotion: AddPromotion,
     /**
      * The AddToCart model constructor.
-     * @property {module:ai_thirdwatch/model/AddToCart}
+     * @property {module:model/AddToCart}
      */
     AddToCart: AddToCart,
     /**
      * The BillingAddress model constructor.
-     * @property {module:ai_thirdwatch/model/BillingAddress}
+     * @property {module:model/BillingAddress}
      */
     BillingAddress: BillingAddress,
     /**
      * The Chargeback model constructor.
-     * @property {module:ai_thirdwatch/model/Chargeback}
+     * @property {module:model/Chargeback}
      */
     Chargeback: Chargeback,
     /**
      * The CreateAccount model constructor.
-     * @property {module:ai_thirdwatch/model/CreateAccount}
+     * @property {module:model/CreateAccount}
      */
     CreateAccount: CreateAccount,
     /**
      * The CreateOrder model constructor.
-     * @property {module:ai_thirdwatch/model/CreateOrder}
+     * @property {module:model/CreateOrder}
      */
     CreateOrder: CreateOrder,
     /**
      * The Custom model constructor.
-     * @property {module:ai_thirdwatch/model/Custom}
+     * @property {module:model/Custom}
      */
     Custom: Custom,
     /**
      * The CustomInfo model constructor.
-     * @property {module:ai_thirdwatch/model/CustomInfo}
+     * @property {module:model/CustomInfo}
      */
     CustomInfo: CustomInfo,
     /**
      * The ErrorResponse model constructor.
-     * @property {module:ai_thirdwatch/model/ErrorResponse}
+     * @property {module:model/ErrorResponse}
      */
     ErrorResponse: ErrorResponse,
     /**
      * The EventResponse model constructor.
-     * @property {module:ai_thirdwatch/model/EventResponse}
+     * @property {module:model/EventResponse}
      */
     EventResponse: EventResponse,
     /**
      * The Item model constructor.
-     * @property {module:ai_thirdwatch/model/Item}
+     * @property {module:model/Item}
      */
     Item: Item,
     /**
      * The ItemStatus model constructor.
-     * @property {module:ai_thirdwatch/model/ItemStatus}
+     * @property {module:model/ItemStatus}
      */
     ItemStatus: ItemStatus,
     /**
      * The LinkSessionToUser model constructor.
-     * @property {module:ai_thirdwatch/model/LinkSessionToUser}
+     * @property {module:model/LinkSessionToUser}
      */
     LinkSessionToUser: LinkSessionToUser,
     /**
      * The Login model constructor.
-     * @property {module:ai_thirdwatch/model/Login}
+     * @property {module:model/Login}
      */
     Login: Login,
     /**
      * The Logout model constructor.
-     * @property {module:ai_thirdwatch/model/Logout}
+     * @property {module:model/Logout}
      */
     Logout: Logout,
     /**
      * The OrderStatus model constructor.
-     * @property {module:ai_thirdwatch/model/OrderStatus}
+     * @property {module:model/OrderStatus}
      */
     OrderStatus: OrderStatus,
     /**
      * The PaymentMethod model constructor.
-     * @property {module:ai_thirdwatch/model/PaymentMethod}
+     * @property {module:model/PaymentMethod}
      */
     PaymentMethod: PaymentMethod,
     /**
      * The Promotion model constructor.
-     * @property {module:ai_thirdwatch/model/Promotion}
+     * @property {module:model/Promotion}
      */
     Promotion: Promotion,
     /**
      * The RemoveFromCart model constructor.
-     * @property {module:ai_thirdwatch/model/RemoveFromCart}
+     * @property {module:model/RemoveFromCart}
      */
     RemoveFromCart: RemoveFromCart,
     /**
      * The ReportItem model constructor.
-     * @property {module:ai_thirdwatch/model/ReportItem}
+     * @property {module:model/ReportItem}
      */
     ReportItem: ReportItem,
     /**
      * The Seller model constructor.
-     * @property {module:ai_thirdwatch/model/Seller}
+     * @property {module:model/Seller}
      */
     Seller: Seller,
     /**
      * The SendMessage model constructor.
-     * @property {module:ai_thirdwatch/model/SendMessage}
+     * @property {module:model/SendMessage}
      */
     SendMessage: SendMessage,
     /**
      * The ShippingAddress model constructor.
-     * @property {module:ai_thirdwatch/model/ShippingAddress}
+     * @property {module:model/ShippingAddress}
      */
     ShippingAddress: ShippingAddress,
     /**
      * The SubmitReview model constructor.
-     * @property {module:ai_thirdwatch/model/SubmitReview}
+     * @property {module:model/SubmitReview}
      */
     SubmitReview: SubmitReview,
     /**
      * The Tag model constructor.
-     * @property {module:ai_thirdwatch/model/Tag}
+     * @property {module:model/Tag}
      */
     Tag: Tag,
     /**
      * The Transaction model constructor.
-     * @property {module:ai_thirdwatch/model/Transaction}
+     * @property {module:model/Transaction}
      */
     Transaction: Transaction,
     /**
      * The UnTag model constructor.
-     * @property {module:ai_thirdwatch/model/UnTag}
+     * @property {module:model/UnTag}
      */
     UnTag: UnTag,
     /**
      * The UpdateAccount model constructor.
-     * @property {module:ai_thirdwatch/model/UpdateAccount}
+     * @property {module:model/UpdateAccount}
      */
     UpdateAccount: UpdateAccount,
     /**
      * The UpdateOrder model constructor.
-     * @property {module:ai_thirdwatch/model/UpdateOrder}
+     * @property {module:model/UpdateOrder}
      */
     UpdateOrder: UpdateOrder,
     /**
      * The AddPromotionApi service constructor.
-     * @property {module:ai_thirdwatch/api/AddPromotionApi}
+     * @property {module:api/AddPromotionApi}
      */
     AddPromotionApi: AddPromotionApi,
     /**
      * The AddToCartApi service constructor.
-     * @property {module:ai_thirdwatch/api/AddToCartApi}
+     * @property {module:api/AddToCartApi}
      */
     AddToCartApi: AddToCartApi,
     /**
      * The ChargebackApi service constructor.
-     * @property {module:ai_thirdwatch/api/ChargebackApi}
+     * @property {module:api/ChargebackApi}
      */
     ChargebackApi: ChargebackApi,
     /**
      * The CreateAccountApi service constructor.
-     * @property {module:ai_thirdwatch/api/CreateAccountApi}
+     * @property {module:api/CreateAccountApi}
      */
     CreateAccountApi: CreateAccountApi,
     /**
      * The CreateOrderApi service constructor.
-     * @property {module:ai_thirdwatch/api/CreateOrderApi}
+     * @property {module:api/CreateOrderApi}
      */
     CreateOrderApi: CreateOrderApi,
     /**
      * The CustomEventApi service constructor.
-     * @property {module:ai_thirdwatch/api/CustomEventApi}
+     * @property {module:api/CustomEventApi}
      */
     CustomEventApi: CustomEventApi,
     /**
      * The ItemStatusApi service constructor.
-     * @property {module:ai_thirdwatch/api/ItemStatusApi}
+     * @property {module:api/ItemStatusApi}
      */
     ItemStatusApi: ItemStatusApi,
     /**
      * The LinkSessionToUserApi service constructor.
-     * @property {module:ai_thirdwatch/api/LinkSessionToUserApi}
+     * @property {module:api/LinkSessionToUserApi}
      */
     LinkSessionToUserApi: LinkSessionToUserApi,
     /**
      * The LoginApi service constructor.
-     * @property {module:ai_thirdwatch/api/LoginApi}
+     * @property {module:api/LoginApi}
      */
     LoginApi: LoginApi,
     /**
      * The LogoutApi service constructor.
-     * @property {module:ai_thirdwatch/api/LogoutApi}
+     * @property {module:api/LogoutApi}
      */
     LogoutApi: LogoutApi,
     /**
      * The OrderStatusApi service constructor.
-     * @property {module:ai_thirdwatch/api/OrderStatusApi}
+     * @property {module:api/OrderStatusApi}
      */
     OrderStatusApi: OrderStatusApi,
     /**
      * The RemoveFromCartApi service constructor.
-     * @property {module:ai_thirdwatch/api/RemoveFromCartApi}
+     * @property {module:api/RemoveFromCartApi}
      */
     RemoveFromCartApi: RemoveFromCartApi,
     /**
      * The ReportItemApi service constructor.
-     * @property {module:ai_thirdwatch/api/ReportItemApi}
+     * @property {module:api/ReportItemApi}
      */
     ReportItemApi: ReportItemApi,
     /**
      * The SendMessageApi service constructor.
-     * @property {module:ai_thirdwatch/api/SendMessageApi}
+     * @property {module:api/SendMessageApi}
      */
     SendMessageApi: SendMessageApi,
     /**
      * The SubmitReviewApi service constructor.
-     * @property {module:ai_thirdwatch/api/SubmitReviewApi}
+     * @property {module:api/SubmitReviewApi}
      */
     SubmitReviewApi: SubmitReviewApi,
     /**
      * The TagAPIApi service constructor.
-     * @property {module:ai_thirdwatch/api/TagAPIApi}
+     * @property {module:api/TagAPIApi}
      */
     TagAPIApi: TagAPIApi,
     /**
      * The TransactionApi service constructor.
-     * @property {module:ai_thirdwatch/api/TransactionApi}
+     * @property {module:api/TransactionApi}
      */
     TransactionApi: TransactionApi,
     /**
      * The UntagAPIApi service constructor.
-     * @property {module:ai_thirdwatch/api/UntagAPIApi}
+     * @property {module:api/UntagAPIApi}
      */
     UntagAPIApi: UntagAPIApi,
     /**
      * The UpdateAccountApi service constructor.
-     * @property {module:ai_thirdwatch/api/UpdateAccountApi}
+     * @property {module:api/UpdateAccountApi}
      */
     UpdateAccountApi: UpdateAccountApi,
     /**
      * The UpdateOrderApi service constructor.
-     * @property {module:ai_thirdwatch/api/UpdateOrderApi}
+     * @property {module:api/UpdateOrderApi}
      */
     UpdateOrderApi: UpdateOrderApi
   };
